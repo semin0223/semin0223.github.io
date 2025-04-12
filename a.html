@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>여러가지 버튼</title>
+  <style>
+    .center-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .my-button {
+      width: 150px;
+      height: 50px;
+      font-size: 20px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .title-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center-wrapper">
+    <div class="title-text">여러가지 버튼</div>
+
+    <button class="my-button" onclick="goToNaver()">네이버</button>
+    <button class="my-button" onclick="goToGoogle()">구글</button>
+    <button class="my-button" onclick="showDayInfo()">오늘의 정보</button>
+  </div>
+
+  <script>
+    // 네이버로 이동
+    function goToNaver() {
+      window.location.href = "https://www.naver.com";
+    }
+
+    // 구글로 이동
+    function goToGoogle() {
+      window.location.href = "https://www.google.com";
+    }
+
+    // 오늘의 상세 정보 표시
+    function showDayInfo() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+      const date = today.getDate();
+      const hour = today.getHours();
+      const minutes = today.getMinutes();
+
+      const days = ["일", "월", "화", "수", "목", "금", "토"];
+      const dayOfWeek = days[today.getDay()];
+
+      const ampm = hour < 12 ? "오전" : "오후";
+      const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+      const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
+
+      alert(`📆 오늘은 ${year}년 ${month}월 ${date}일 (${dayOfWeek})입니다.\n🕒 현재 시각은 ${ampm} ${time}이고, 지금은 ${light}입니다.`);
+    }
+  </script>
+
+</body>
+</html>
+
+
