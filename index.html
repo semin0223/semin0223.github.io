@@ -21,6 +21,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;  /* 버튼이 세로로 쌓이도록 설정 */
     }
 
     .center-wrapper {
@@ -57,6 +58,18 @@
       margin-bottom: 20px;
     }
 
+    /* 모바일에서의 반응형 디자인 */
+    @media (max-width: 600px) {
+      .my-button {
+        width: 150px;  /* 모바일에서 버튼 크기 줄이기 */
+        height: 50px;  /* 버튼 높이 줄이기 */
+        font-size: 16px;  /* 폰트 크기 줄이기 */
+      }
+
+      .title-text {
+        font-size: 24px;  /* 제목 크기 줄이기 */
+      }
+    }
   </style>
 </head>
 <body>
@@ -82,4 +95,30 @@
   </div>
 
   <script>
-    // 페이지로 이동
+    // 페이지로 이동하는 함수
+    function goToPage(url) {
+      window.location.href = url;
+    }
+
+    // 오늘의 상세 정보 표시
+    function showDayInfo() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+      const date = today.getDate();
+      const hour = today.getHours();
+      const minutes = today.getMinutes();
+
+      const days = ["일", "월", "화", "수", "목", "금", "토"];
+      const dayOfWeek = days[today.getDay()];
+
+      const ampm = hour < 12 ? "오전" : "오후";
+      const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+      const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
+
+      alert(`📆 오늘은 ${year}년 ${month}월 ${date}일 (${dayOfWeek})입니다.\n🕒 현재 시각은 ${ampm} ${time}이고, 지금은 ${light}입니다.`);
+    }
+  </script>
+
+</body>
+</html>
