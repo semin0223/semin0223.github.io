@@ -20,13 +20,10 @@
       font-size: 20px;
       border-radius: 15px;
       cursor: pointer;
-      background-color: #f0f0f0;
-      color: black;
-      border: none;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease; /* 호버 효과 추가 */
     }
 
-    /* ✅ 여기 호버 효과 */
+    /* ✅ 호버 효과 */
     .my-button:hover {
       background-color: #4e9af1;
       color: white;
@@ -51,14 +48,17 @@
   </div>
 
   <script>
+    // 네이버로 이동
     function goToNaver() {
       window.location.href = "https://www.naver.com";
     }
 
+    // 구글로 이동
     function goToGoogle() {
       window.location.href = "https://www.google.com";
     }
 
+    // 오늘의 상세 정보 표시
     function showDayInfo() {
       const today = new Date();
       const year = today.getFullYear();
@@ -69,6 +69,7 @@
 
       const days = ["일", "월", "화", "수", "목", "금", "토"];
       const dayOfWeek = days[today.getDay()];
+
       const ampm = hour < 12 ? "오전" : "오후";
       const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
       const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
