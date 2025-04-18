@@ -20,10 +20,10 @@
       font-size: 20px;
       border-radius: 15px;
       cursor: pointer;
-      transition: all 0.3s ease; /* 호버 효과 추가 */
+      transition: all 0.3s ease;
     }
 
-    /* ✅ 호버 효과 */
+    /* 호버 효과 */
     .my-button:hover {
       background-color: #4e9af1;
       color: white;
@@ -42,20 +42,27 @@
   <div class="center-wrapper">
     <div class="title-text">여러가지 버튼</div>
 
-    <button class="my-button" onclick="goToNaver()">네이버</button>
-    <button class="my-button" onclick="goToGoogle()">구글</button>
+    <button class="my-button" onclick="goToPage('https://www.naver.com')">네이버</button>
+    <button class="my-button" onclick="goToPage('https://www.google.com')">구글</button>
     <button class="my-button" onclick="showDayInfo()">오늘의 정보</button>
+    <!-- 새로 추가된 12개 버튼, 각각 다른 페이지로 이동 -->
+    <button class="my-button" onclick="goToPage('https://www.youtube.com')">유튜브</button>
+    <button class="my-button" onclick="goToPage('https://www.wikipedia.org')">위키백과</button>
+    <button class="my-button" onclick="goToPage('https://www.github.com')">깃허브</button>
+    <button class="my-button" onclick="goToPage('https://www.twitter.com')">트위터</button>
+    <button class="my-button" onclick="goToPage('https://www.instagram.com')">인스타그램</button>
+    <button class="my-button" onclick="goToPage('https://www.facebook.com')">페이스북</button>
+    <button class="my-button" onclick="goToPage('https://www.nytimes.com')">뉴욕타임스</button>
+    <button class="my-button" onclick="goToPage('https://www.bbc.com')">BBC</button>
+    <button class="my-button" onclick="goToPage('https://www.cnn.com')">CNN</button>
+    <button class="my-button" onclick="goToPage('https://www.reddit.com')">레딧</button>
+    <button class="my-button" onclick="goToPage('https://www.amazon.com')">아마존</button>
   </div>
 
   <script>
-    // 네이버로 이동
-    function goToNaver() {
-      window.location.href = "https://www.naver.com";
-    }
-
-    // 구글로 이동
-    function goToGoogle() {
-      window.location.href = "https://www.google.com";
+    // 페이지로 이동하는 함수
+    function goToPage(url) {
+      window.location.href = url;
     }
 
     // 오늘의 상세 정보 표시
