@@ -20,6 +20,18 @@
       font-size: 20px;
       border-radius: 15px;
       cursor: pointer;
+      background-color: #f0f0f0;
+      color: black;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    /* ⬇️ 호버 효과 추가 */
+    .my-button:hover {
+      background-color: #a0c4ff; /* 마우스를 올리면 배경색이 바뀜 */
+      color: white;              /* 글자색은 흰색으로 */
+      transform: scale(1.05);    /* 버튼이 살짝 커짐 */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 생김 */
     }
 
     .title-text {
@@ -51,25 +63,3 @@
 
     // 오늘의 상세 정보 표시
     function showDayInfo() {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = today.getMonth() + 1;
-      const date = today.getDate();
-      const hour = today.getHours();
-      const minutes = today.getMinutes();
-
-      const days = ["일", "월", "화", "수", "목", "금", "토"];
-      const dayOfWeek = days[today.getDay()];
-
-      const ampm = hour < 12 ? "오전" : "오후";
-      const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
-      const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
-
-      alert(`📆 오늘은 ${year}년 ${month}월 ${date}일 (${dayOfWeek})입니다.\n🕒 현재 시각은 ${ampm} ${time}이고, 지금은 ${light}입니다.`);
-    }
-  </script>
-
-</body>
-</html>
-
-
