@@ -1,40 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>여러가지 버튼</title>
   <style>
+    /* 기본적인 스타일 리셋 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 배경색과 텍스트 색깔을 설정 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; /* 배경색을 밝게 설정 */
+      color: #333;  /* 글자 색상 */
+      height: 100vh;  /* 화면 높이를 꽉 채우기 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .center-wrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
       gap: 10px;
       align-items: center;
+      text-align: center;
     }
 
     .my-button {
-      width: 150px;
-      height: 50px;
-      font-size: 20px;
+      width: 200px;  /* 버튼 크기 확대 */
+      height: 60px;  /* 버튼 높이 확대 */
+      font-size: 18px;  /* 글자 크기 */
       border-radius: 15px;
       cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    /* 호버 효과 */
-    .my-button:hover {
       background-color: #4e9af1;
       color: white;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 버튼 호버 효과 */
+    .my-button:hover {
+      background-color: #0066cc;
+      transform: scale(1.1);  /* 크기 확대 */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
 
     .title-text {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
+      margin-bottom: 20px;
     }
+
   </style>
 </head>
 <body>
@@ -42,10 +64,10 @@
   <div class="center-wrapper">
     <div class="title-text">여러가지 버튼</div>
 
+    <!-- 버튼들 -->
     <button class="my-button" onclick="goToPage('https://www.naver.com')">네이버</button>
     <button class="my-button" onclick="goToPage('https://www.google.com')">구글</button>
     <button class="my-button" onclick="showDayInfo()">오늘의 정보</button>
-    <!-- 새로 추가된 12개 버튼, 각각 다른 페이지로 이동 -->
     <button class="my-button" onclick="goToPage('https://www.youtube.com')">유튜브</button>
     <button class="my-button" onclick="goToPage('https://www.wikipedia.org')">위키백과</button>
     <button class="my-button" onclick="goToPage('https://www.github.com')">깃허브</button>
@@ -60,30 +82,4 @@
   </div>
 
   <script>
-    // 페이지로 이동하는 함수
-    function goToPage(url) {
-      window.location.href = url;
-    }
-
-    // 오늘의 상세 정보 표시
-    function showDayInfo() {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = today.getMonth() + 1;
-      const date = today.getDate();
-      const hour = today.getHours();
-      const minutes = today.getMinutes();
-
-      const days = ["일", "월", "화", "수", "목", "금", "토"];
-      const dayOfWeek = days[today.getDay()];
-
-      const ampm = hour < 12 ? "오전" : "오후";
-      const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
-      const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
-
-      alert(`📆 오늘은 ${year}년 ${month}월 ${date}일 (${dayOfWeek})입니다.\n🕒 현재 시각은 ${ampm} ${time}이고, 지금은 ${light}입니다.`);
-    }
-  </script>
-
-</body>
-</html>
+    // 페이지로 이동
