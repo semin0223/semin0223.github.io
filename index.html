@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>여러가지 버튼</title>
+  <title>여러가지 이동 버튼</title>
   <style>
     /* 기본적인 스타일 리셋 */
     * {
@@ -100,24 +100,24 @@
       window.location.href = url;
     }
 
-    // 오늘의 상세 정보 표시
-    function showDayInfo() {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = today.getMonth() + 1;
-      const date = today.getDate();
-      const hour = today.getHours();
-      const minutes = today.getMinutes();
+    // // 오늘의 상세 정보 표시
+    // function showDayInfo() {
+    //   const today = new Date();
+    //   const year = today.getFullYear();
+    //   const month = today.getMonth() + 1;
+    //   const date = today.getDate();
+    //   const hour = today.getHours();
+    //   const minutes = today.getMinutes();
 
-      const days = ["일", "월", "화", "수", "목", "금", "토"];
-      const dayOfWeek = days[today.getDay()];
+    //   const days = ["일", "월", "화", "수", "목", "금", "토"];
+    //   const dayOfWeek = days[today.getDay()];
 
-      const ampm = hour < 12 ? "오전" : "오후";
-      const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
-      const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
+    //   const ampm = hour < 12 ? "오전" : "오후";
+    //   const time = `${hour.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+    //   const light = (hour >= 6 && hour < 18) ? "낮" : "밤";
 
-      alert(`📆 오늘은 ${year}년 ${month}월 ${date}일 (${dayOfWeek})입니다.\n🕒 현재 시각은 ${ampm} ${time}이고, 지금은 ${light}입니다.`);
-    }
+    //   alert(`📆 오늘은 ${year}년 ${month}월 ${date}일 (${dayOfWeek})입니다.\n🕒 현재 시각은 ${ampm} ${time}이고, 지금은 ${light}입니다.`);
+    // }
   </script>
 
 </body>
